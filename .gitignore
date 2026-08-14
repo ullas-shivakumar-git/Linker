@@ -34,3 +34,6 @@ Thumbs.db
 # Editors
 .vscode/
 .idea/
+
+# Personal Claude Code instructions — not shared with the team
+CLAUDE.local.md
