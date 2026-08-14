@@ -15,6 +15,17 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+build/
+dist/
+
+# Test artifacts — pytest coverage output, and any stray local db files
+# (our tests run against real Postgres per PLAN.md, but this guards against
+# an accidental sqlite file from a misconfigured test run)
+.coverage
+.coverage.*
+htmlcov/
+*.db
+*.sqlite3
 
 # OS cruft
 .DS_Store
