@@ -106,7 +106,11 @@ def run_workflow(
     """
     order = topological_sort(nodes, edges)
     node_by_id = {n["id"]: n for n in nodes}
-    context = ExecutionContext(workspace_id=workspace_id, trigger_payload=trigger_payload)
+    context = ExecutionContext(
+        workspace_id=workspace_id,
+        trigger_payload=trigger_payload,
+        anthropic_client=anthropic_client,
+    )
 
     steps: list[StepResult] = []
     skipped: set[str] = set()
