@@ -10,10 +10,10 @@ from alembic import context
 from app.core.config import settings
 from app.datastore.session import Base
 
-# Import every model module here so its table registers on Base.metadata
-# before autogenerate runs. There are no models yet (Milestone 1.1 is just
-# starting) — add imports like `from app.datastore.models import user` etc.
-# as each one is written. Autogenerate can only diff what's been imported.
+# Importing the models package registers every table on Base.metadata —
+# autogenerate can only diff what's been imported, so this import is not
+# unused even though nothing here references it directly.
+from app.datastore import models  # noqa: F401
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
